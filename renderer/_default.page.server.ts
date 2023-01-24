@@ -1,12 +1,18 @@
 import { renderToString } from '@vue/server-renderer'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import { createPageApp } from './app'
-import logoUrl from './logo.svg'
+import logoUrl from '../assets/logo.svg'
 import type { PageContextServer } from './types'
 
 export { render }
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'urlPathname']
+
+// В конфиге включили пререндер для всех страниц
+// В дефолтном серверном файле сделали чтобы ни одна страница не перерендеривалась
+// Если хотим сделать ссг страницу, рядом с ней нужно положить файл something.server.ts
+// и экспортировать const doNotPrerender = false;
+export const doNotPrerender = true;
 
 async function render(pageContext: PageContextServer) {
   const app = createPageApp(pageContext, false)

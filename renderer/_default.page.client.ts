@@ -21,8 +21,6 @@ let app: ReturnType<typeof createPageApp>;
 
 // pageContext - объект плагина, в котором хранятся все данные о текущей странице.
 async function render(pageContext: PageContextClient) {
-  console.log({...pageContext.Page});
-
   if (!app) {
     // Если внутри html который пришел с бека нет контента, считаем что это клинет онли страница
     app = createPageApp(pageContext, document.getElementById("page")?.innerHTML === "");
