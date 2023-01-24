@@ -6,13 +6,14 @@
       </a>
       <Link href="/">Home</Link>
       <Link href="/about">About</Link>
+      <Link href="/only-client">Client only page</Link>
     </div>
     <div class="content"><slot /></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Link from './Link.vue'
+import Link from '../components/Link.vue'
 </script>
 
 <style>

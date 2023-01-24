@@ -1,4 +1,4 @@
-import { createApp } from './app';
+import { createPageApp } from './app';
 import type { PageContextClient } from './types';
 // Эта функция отвечает за то как будет рендериться наша страница на клиенте.
 // Для каждой странице можно написать свой рендерер в зависимости от потребностей.
@@ -17,12 +17,15 @@ export const clientRouting = true;
 // false - не хотим
 export const prefetchStaticAssets = { when: 'HOVER' };
 
-let app: ReturnType<typeof createApp>;
+let app: ReturnType<typeof createPageApp>;
 
 // pageContext - объект плагина, в котором хранятся все данные о текущей странице.
 async function render(pageContext: PageContextClient) {
+  console.log({...pageContext.Page});
+
   if (!app) {
-    app = createApp(pageContext);
+    // Если внутри html который пришел с бека нет контента, считаем что это клинет онли страница
+    app = createPageApp(pageContext, document.getElementById("page")?.innerHTML === "");
     app.mount('#app');
   } else {
     app.changePage(pageContext);

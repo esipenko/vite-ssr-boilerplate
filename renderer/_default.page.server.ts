@@ -1,6 +1,6 @@
 import { renderToString } from '@vue/server-renderer'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import { createApp } from './app'
+import { createPageApp } from './app'
 import logoUrl from './logo.svg'
 import type { PageContextServer } from './types'
 
@@ -9,8 +9,11 @@ export { render }
 export const passToClient = ['pageProps', 'urlPathname']
 
 async function render(pageContext: PageContextServer) {
-  const app = createApp(pageContext)
-  const appHtml = await renderToString(app)
+  const app = createPageApp(pageContext, false)
+  // Когда мы называем страницу something.page.client.vue
+  // плагин понимает что это клинет онли страница, и Page здесь не будет
+  // В корень приложения мы в таком случае не хотим ничего встраивать
+  const appHtml = pageContext.Page ? await renderToString(app) : "";
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
