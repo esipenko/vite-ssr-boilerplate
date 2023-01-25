@@ -3,6 +3,7 @@ import PageShell from '../layouts/PageShell.vue';
 import { setPageContext } from '../composables/usePageContext';
 import type { PageContext } from './types';
 import i18n from '../locales/i18n-config';
+import { createVuexStore } from '../store/vuex-store';
 
 export { createPageApp }
 
@@ -34,6 +35,8 @@ function createPageApp(pageContext: PageContext, clientOnly: boolean) {
 
 
   const app = clientOnly ? createApp(PageWithLayout) : createSSRApp(PageWithLayout);
+  const store = createVuexStore();
+  app.use(store);
   app.use(i18n);
 
   const pageContextReactive = reactive(pageContext);

@@ -11,4 +11,5 @@ export default {
     "aboutContent": "Demo app using <code> vite-plugin-ssr </code>",
     'en': 'English',
     'ru': 'Russian',
+    'doubledCounter': 'This is doubled counter value: {value}',
 }

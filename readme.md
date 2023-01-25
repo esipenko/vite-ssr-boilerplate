@@ -53,3 +53,5 @@ export const clientRouting = true;
 
 Использование аналогично vue2
 Конфигурация в [i18n-config.ts](./locales/i18n-config.ts).
+
+### [VueX](https://vuex.vuejs.org/)

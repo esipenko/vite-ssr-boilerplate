@@ -11,4 +11,5 @@ export default {
     "aboutContent": "Это демо приложение использующее <code> vite-plugin-ssr </code> ",
     'ru': 'Русский',
     'en': 'Английский',
+    'doubledCounter': 'Это удвоенное значение счетчика: {value}',
 }

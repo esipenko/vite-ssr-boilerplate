@@ -1,8 +1,10 @@
 <template>
-  <button type="button" @click="state.count++">Counter {{ state.count }}</button>
+  <button type="button" @click="incrementCounter">Counter {{ counter }}</button>
+  <p>{{ $t('doubledCounter', { value: doubledCounter }) }}</p>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue'
-const state = reactive({ count: 0 })
+import useCounter from '../../composables/useCounter';
+
+const { counter, doubledCounter, incrementCounter } = useCounter();
 </script>
