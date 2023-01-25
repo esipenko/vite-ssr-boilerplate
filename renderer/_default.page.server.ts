@@ -6,7 +6,7 @@ import type { PageContextServer } from './types'
 
 export { render }
 // See https://vite-plugin-ssr.com/data-fetching
-export const passToClient = ['pageProps', 'urlPathname']
+export const passToClient = ['pageProps']
 
 // В конфиге включили пререндер для всех страниц
 // В дефолтном серверном файле сделали чтобы ни одна страница не перерендеривалась

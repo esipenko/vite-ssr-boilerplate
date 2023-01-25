@@ -1,6 +1,6 @@
 <template>
-  <h1>About</h1>
-  <p>Demo app using <code>vite-plugin-ssr</code>.</p>
+  <h1>{{ $t('aboutTitle') }}</h1>
+  <p v-html="$t('aboutContent')"></p>
 </template>
 
 <style>

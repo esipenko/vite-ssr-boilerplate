@@ -2,6 +2,7 @@ import { createSSRApp, defineComponent, h, markRaw, reactive, createApp } from '
 import PageShell from '../layouts/PageShell.vue';
 import { setPageContext } from '../composables/usePageContext';
 import type { PageContext } from './types';
+import i18n from '../locales/i18n-config';
 
 export { createPageApp }
 
@@ -31,7 +32,9 @@ function createPageApp(pageContext: PageContext, clientOnly: boolean) {
     }
   })
 
+
   const app = clientOnly ? createApp(PageWithLayout) : createSSRApp(PageWithLayout);
+  app.use(i18n);
 
   const pageContextReactive = reactive(pageContext);
   const changePage = (pageContext: PageContext) => {

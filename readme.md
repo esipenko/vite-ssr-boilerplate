@@ -47,3 +47,9 @@ export const clientRouting = true;
 ### [Client Only](https://vite-plugin-ssr.com/render-modes#spa)
 
 Чтобы создать страницу на клиенте, эту страницу следует называть `pageName.page.client.vue`
+
+
+### [I18n](https://vue-i18n.intlify.dev/)
+
+Использование аналогично vue2
+Конфигурация в [i18n-config.ts](./locales/i18n-config.ts).

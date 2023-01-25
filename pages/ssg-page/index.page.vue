@@ -1,5 +1,5 @@
 <template>
     <h1>
-        SSG PAGE
+        {{ $t('ssgTitle') }}
     </h1>
 </template>

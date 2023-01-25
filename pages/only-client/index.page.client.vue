@@ -1,5 +1,5 @@
 <template>
     <h1>
-        THIS PAGE IS CLIENT ONLY
+        {{ $t('clientOnlyTitle') }}
     </h1>
 </template>
