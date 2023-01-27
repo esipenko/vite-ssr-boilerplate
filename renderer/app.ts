@@ -46,7 +46,14 @@ function createPageApp(pageContext: PageContext, clientOnly: boolean) {
     rootComponent.pageProps = markRaw(pageContext.pageProps || {})
   }
 
-  objectAssign(app, { changePage });
+  const startLoading = () => {
+    store.commit('loader/setIsPageLoading', true);
+  }
+  const stopLoading = () => {
+    store.commit('loader/setIsPageLoading', false);
+  }
+
+  objectAssign(app, { changePage, startLoading, stopLoading });
 
   setPageContext(app, pageContextReactive)
 

@@ -6,6 +6,9 @@ import type { PageContextClient } from './types';
 // То есть, чтобы html мы получали только при первом запросе, и вся остальная навигация
 // происходила на клиенте 
 export { render };
+
+export { onPageTransitionStart }
+export { onPageTransitionEnd }
 // https://vite-plugin-ssr.com/server-routing-vs-client-routing
 // Если тру, роутинг происходит на клиенте. Клиент не запрашивает каждый раз новый html.
 // Если фолз, на каждый переход внутри сайта запрашивается новый html 
@@ -30,3 +33,9 @@ async function render(pageContext: PageContextClient) {
   }
 }
 
+function onPageTransitionStart(pageContext: PageContextClient) {
+  app.startLoading();
+}
+function onPageTransitionEnd() {
+  app.stopLoading();
+}
