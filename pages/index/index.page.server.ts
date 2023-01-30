@@ -3,8 +3,8 @@
 // Если хотим сделать ссг страницу, рядом с ней нужно положить файл something.server.ts
 // и экспортировать const doNotPrerender = false;
 export const doNotPrerender = false;
-import { PageContextServer } from '../../renderer/types';
-import testFetchOnBeforeRender from '../../utils/testFetchOnBeforeRender';
+import { PageContextServer } from '@/renderer/types';
+import testFetchOnBeforeRender from '@/utils/testFetchOnBeforeRender';
 
 export { onBeforeRender }
 

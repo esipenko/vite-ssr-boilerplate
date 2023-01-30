@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import useCounter from '../../composables/useCounter';
+import useCounter from '@/composables/useCounter';
 
-const {counter, doubledCounter} = useCounter();
+const { counter, doubledCounter } = useCounter();
 </script>

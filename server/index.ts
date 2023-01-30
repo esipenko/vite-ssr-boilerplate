@@ -2,7 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import { renderPage } from 'vite-plugin-ssr'
 import { root } from './root.js'
-import createApolloServerInstance from '../utils/apollo/createApolloServerInstance.js'
+import createApolloServerInstance from '@/utils/apollo/createApolloServerInstance.js'
 const isProduction = process.env.NODE_ENV === 'production'
 
 startServer()

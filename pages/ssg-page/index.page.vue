@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-import useCounter from '../../composables/useCounter';
-import { DisneyCharacterDto } from '../../types/dto/disneyCharacter';
+import useCounter from '@/composables/useCounter';
+import { DisneyCharacterDto } from '@/types/dto/disneyCharacter';
 
 const {counter, doubledCounter} = useCounter();
 defineProps<{disneyCharacters: DisneyCharacterDto[]}>()

@@ -1,4 +1,4 @@
-import { APOLLO_URL } from '../utils/apollo/constants';
+import { APOLLO_URL } from '@/utils/apollo/constants';
 import { createPageApp } from './app';
 import type { PageContextClient } from './types';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client/core'

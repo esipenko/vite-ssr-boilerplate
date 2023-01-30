@@ -1,6 +1,6 @@
 import { ActionTree, GetterTree, Module, MutationTree } from "vuex";
-import { CounterState } from "../../../types/store/counter";
-import MainState from "../../../types/store";
+import { CounterState } from "@/types/store/counter";
+import MainState from "@/types/store";
 
 const state: CounterState = {
     counter: 0,
