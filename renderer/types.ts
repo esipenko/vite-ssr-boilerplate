@@ -20,7 +20,10 @@ export type PageContextCustom = {
       title?: string
       description?: string
     }
-  }
+  },
+  apolloInitialState: any,
+  apolloClient: any,
+  appHtml: string,
 }
 
 type PageContextServer = PageContextBuiltIn<Page> & PageContextCustom

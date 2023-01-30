@@ -9,6 +9,7 @@
       <Link href="/about">{{ $t('links.about') }}</Link>
       <Link href="/only-client">{{ $t('links.clientOnly') }}</Link>
       <Link href="/ssg-page">{{ $t('links.ssg') }}</Link>
+      <Link href="/apollo-example">Примеры Apollo</Link>
 
       <LocaleSwitcher />
     </div>

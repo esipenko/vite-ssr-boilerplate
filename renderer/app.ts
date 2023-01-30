@@ -1,18 +1,22 @@
-import { createSSRApp, defineComponent, h, markRaw, reactive, createApp } from 'vue';
+import { createSSRApp, defineComponent, h, markRaw, reactive, createApp, provide } from 'vue';
 import PageShell from '../layouts/PageShell.vue';
 import { setPageContext } from '../composables/usePageContext';
 import type { PageContext } from './types';
 import i18n from '../locales/i18n-config';
 import { createVuexStore } from '../store/vuex-store';
+import { DefaultApolloClient } from '@vue/apollo-composable'
 
 export { createPageApp }
 
-function createPageApp(pageContext: PageContext, clientOnly: boolean) {
+function createPageApp(pageContext: PageContext, clientOnly: boolean, apolloClient: any) {
   const { Page } = pageContext;
 
   let rootComponent: any;
 
   const PageWithLayout = defineComponent({
+    setup() {
+      provide(DefaultApolloClient, apolloClient)
+    },
     data: () => ({
       Page: markRaw(Page),
       pageProps: markRaw(pageContext.pageProps || {})

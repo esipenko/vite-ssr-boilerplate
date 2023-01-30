@@ -55,3 +55,33 @@ export const clientRouting = true;
 Конфигурация в [i18n-config.ts](./locales/i18n-config.ts).
 
 ### [VueX](https://vuex.vuejs.org/)
+
+### [Дата фетчинг](https://vite-plugin-ssr.com/data-fetching)
+### [ApolloClient](https://v4.apollo.vuejs.org/)
+Ух, на этой либе я от души набил себе шишек.
+
+
+Прежде всего. Все что в каких-то гайдах импортируется из "@apollo/client" 
+следует импортировать из "@apollo/client/сore", иначе при сборках все будет падать с ошибкой реакт не найден.
+
+Если используется vite, и падает ошибка `__DEV__ is not defined` проверьте что в [vite.config.ts](./vite.config.ts) добавили 
+
+```
+    define: {
+      "__DEV__": (mode === "development").toString(),
+    },
+```
+
+Для использования Apollo мы конфигурируем инстанс на [сервере](./server/index.ts), [передаем его данные](./renderer/_default.page.server.ts) в pageContext на клиент, [где собираем](./renderer/_default.page.client.ts) уже свой клиент.
+
+Дата фетчинг осуществляется тоже по разному
+
+[SSR](./pages/apollo-example/ssr/index.page.server.ts). Внутри pageContext у SSR страниц лежит инстанс ApolloClient. Аналогично тому как запращиваем данные с помощью fetch можем использовать ApolloClient
+
+```ts
+    const { data } = await pageContext.apolloClient.query({query: queryName})
+```
+
+[SSG](./pages/apollo-example/ssg/index.page.server.ts). В дев режиме у ССГ страницы есть доступ к pageContext. Поэтому в дев режиме действем аналогично SSR. Во время билда к pageContext доступа не имеем. Поэтому создаем новые инстанс и делаем запрос так же как в предыдущем пункте.
+
+[CLientOnly](./pages/apollo-example/client-only/index.page.client.vue). В клиент онли страницах вообще не задействуется серверный код. Тут мы можем использовать `@vue/apollo-composable` внутри `<script setup>` 
