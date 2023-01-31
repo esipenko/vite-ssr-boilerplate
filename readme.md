@@ -1,4 +1,5 @@
 # vite-ssr-plugin boilerplate
+
 Шаблон для проекта с использованием [`vite-ssr-plugin`](https://vite-plugin-ssr.com), vue3, ts
 
 ## Подготовка
@@ -13,6 +14,7 @@
 ### [Pre-rendering (SSG)](https://vite-plugin-ssr.com/pre-rendering)
 
 В файле [vite.config.ts](vite.config.ts)
+
 ```js
     plugins: {
         ssr({
@@ -20,6 +22,7 @@
         })
     }
 ```
+
 Эта опция включает генерацию всех страниц во время билда проекта.
 
 В файле [_default.page.server.ts](renderer/default.page.server.ts) отключаем пререндер для всех файлов
@@ -48,7 +51,6 @@ export const clientRouting = true;
 
 Чтобы создать страницу на клиенте, эту страницу следует называть `pageName.page.client.vue`
 
-
 ### [I18n](https://vue-i18n.intlify.dev/)
 
 Использование аналогично vue2
@@ -57,16 +59,17 @@ export const clientRouting = true;
 ### [VueX](https://vuex.vuejs.org/)
 
 ### [Дата фетчинг](https://vite-plugin-ssr.com/data-fetching)
+
 ### [ApolloClient](https://v4.apollo.vuejs.org/)
+
 Ух, на этой либе я от души набил себе шишек.
 
-
-Прежде всего. Все что в каких-то гайдах импортируется из "@apollo/client" 
+Прежде всего. Все что в каких-то гайдах импортируется из "@apollo/client"
 следует импортировать из "@apollo/client/сore", иначе при сборках все будет падать с ошибкой реакт не найден.
 
-Если используется vite, и падает ошибка `__DEV__ is not defined` проверьте что в [vite.config.ts](./vite.config.ts) добавили 
+Если используется vite, и падает ошибка `__DEV__ is not defined` проверьте что в [vite.config.ts](./vite.config.ts) добавили
 
-```
+```js
     define: {
       "__DEV__": (mode === "development").toString(),
     },
