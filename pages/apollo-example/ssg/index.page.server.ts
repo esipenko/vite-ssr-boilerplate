@@ -1,8 +1,7 @@
-import createApolloServerInstance from '../../../utils/apollo/createApolloServerInstance';
-import { PageContextServer } from '../../../renderer/types';
-import { GET_COUNTRIES } from '../../../gql/queryCountry';
+import createApolloServerInstance from '@/utils/apollo/createApolloServerInstance';
+import { PageContextServer } from '@/renderer/types';
+import { GET_COUNTRIES } from '@/gql/queryCountry';
 
-// и экспортировать const doNotPrerender = false;
 export const doNotPrerender = false;
 
 export { onBeforeRender };

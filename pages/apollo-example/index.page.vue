@@ -4,5 +4,5 @@
   <Link href="/apollo-example/ssg"> SSG APOLLO </Link>
 </template>
 <script lang="ts" setup>
-import Link from '../../components/Link.vue';
+import Link from '@/components/Link.vue';
 </script>

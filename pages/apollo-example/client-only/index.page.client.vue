@@ -4,8 +4,8 @@
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue';
-import testApolloRequest from '../../../utils/testApolloRequest';
-import CountryList from '../../../components/CountryList.vue';
+import testApolloRequest from '@/utils/testApolloRequest';
+import CountryList from '@/components/CountryList.vue';
 
 const { result } = testApolloRequest();
 

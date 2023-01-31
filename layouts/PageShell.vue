@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import Link from '../components/Link.vue';
-import LocaleSwitcher from '../components/LocaleSwitcher.vue';
-import ProgressBar from '../components/ProgressBar';
+import Link from '@/components/Link.vue';
+import LocaleSwitcher from '@/components/LocaleSwitcher.vue';
+import ProgressBar from '@/components/ProgressBar';
 </script>
 
 <style>

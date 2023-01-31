@@ -14,6 +14,6 @@
 
 <script lang="ts" setup>
 import Counter from '@/components/Counter.vue';
-import { DisneyCharacterDto } from '../../types/dto/disneyCharacter';
+import { DisneyCharacterDto } from '@/types/dto/disneyCharacter';
 defineProps<{ disneyCharacters: DisneyCharacterDto[] }>();
 </script>

@@ -1,5 +1,5 @@
-import { GET_COUNTRIES } from '../../../gql/queryCountry';
-import { PageContextServer } from '../../../renderer/types';
+import { GET_COUNTRIES } from '@/gql/queryCountry';
+import { PageContextServer } from '@/renderer/types';
 
 export { onBeforeRender };
 

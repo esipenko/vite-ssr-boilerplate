@@ -3,7 +3,7 @@
   <CountryList :countries="countries" />
 </template>
 <script lang="ts" setup>
-import CountryList from '../../../components/CountryList.vue';
+import CountryList from '@/components/CountryList.vue';
 
 defineProps(['countries']);
 </script>

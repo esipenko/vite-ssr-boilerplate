@@ -1,6 +1,6 @@
 import { GetterTree, Module, MutationTree } from 'vuex';
-import { LoaderState } from '../../../types/store/loader';
-import MainState from '../../../types/store';
+import { LoaderState } from '@/types/store/loader';
+import MainState from '@/types/store';
 
 const state: LoaderState = {
   isPageLoading: false,
