@@ -1,1 +1,1 @@
-export const title = "SPA";
+export const title = 'SPA';

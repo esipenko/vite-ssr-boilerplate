@@ -6,7 +6,7 @@ export const doNotPrerender = false;
 import { PageContextServer } from '../../renderer/types';
 import testFetchOnBeforeRender from '../../utils/testFetchOnBeforeRender';
 
-export { onBeforeRender }
+export { onBeforeRender };
 
 async function onBeforeRender(pageContext: PageContextServer) {
   return await testFetchOnBeforeRender(pageContext);

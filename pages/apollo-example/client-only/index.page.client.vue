@@ -1,8 +1,6 @@
 <template>
-    <h1>
-        This is apollo client only
-    </h1>
-    <CountryList :countries="countries" />
+  <h1>This is apollo client only</h1>
+  <CountryList :countries="countries" />
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue';
@@ -12,10 +10,10 @@ import CountryList from '../../../components/CountryList.vue';
 const { result } = testApolloRequest();
 
 const countries = computed(() => {
-    if (!result.value) {
-        return [];
-    }
+  if (!result.value) {
+    return [];
+  }
 
-    return result.value.countries;
-})
+  return result.value.countries;
+});
 </script>

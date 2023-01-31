@@ -14,14 +14,13 @@
       <LocaleSwitcher />
     </div>
     <div class="content">
-        <slot />
+      <slot />
     </div>
-
   </div>
 </template>
 
 <script lang="ts" setup>
-import Link from '../components/Link.vue'
+import Link from '../components/Link.vue';
 import LocaleSwitcher from '../components/LocaleSwitcher.vue';
 import ProgressBar from '../components/ProgressBar';
 </script>

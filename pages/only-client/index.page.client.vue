@@ -1,11 +1,9 @@
 <template>
-    <h1>
-        {{ $t('clientOnlyTitle') }}
-    </h1>
-    <p>
-        Counter: {{ counter }}
-    </p>
-    <p>{{ $t('doubledCounter', { value: doubledCounter }) }}</p>
+  <h1>
+    {{ $t('clientOnlyTitle') }}
+  </h1>
+  <p>Counter: {{ counter }}</p>
+  <p>{{ $t('doubledCounter', { value: doubledCounter }) }}</p>
 </template>
 
 <script lang="ts" setup>

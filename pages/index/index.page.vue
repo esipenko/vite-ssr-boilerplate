@@ -1,5 +1,4 @@
 <template>
-
   <h1>Welcome</h1>
   This page is:
   <ul>
@@ -14,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import Counter from "@/components/Counter.vue"
-import { DisneyCharacterDto } from "../../types/dto/disneyCharacter";
-defineProps<{disneyCharacters: DisneyCharacterDto[]}>()
+import Counter from '@/components/Counter.vue';
+import { DisneyCharacterDto } from '../../types/dto/disneyCharacter';
+defineProps<{ disneyCharacters: DisneyCharacterDto[] }>();
 </script>

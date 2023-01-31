@@ -1,10 +1,10 @@
-import { gql } from "@apollo/client/core";
+import { gql } from '@apollo/client/core';
 
 export const GET_COUNTRIES = gql`
-query GetCountries {
-  countries {
-    code
-    name
+  query GetCountries {
+    countries {
+      code
+      name
+    }
   }
-}
-`
+`;

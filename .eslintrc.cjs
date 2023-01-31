@@ -17,6 +17,8 @@ module.exports = {
     parser: '@typescript-eslint/parser',
   },
   rules: {
+    'vue/multi-word-component-names': 'off',
     'prettier/prettier': ['error', prettierConfig],
+    '@typescript-eslint/no-this-alias': 'off',
   },
 };

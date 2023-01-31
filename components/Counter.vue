@@ -1,5 +1,7 @@
 <template>
-  <button class="counter" type="button" @click="incrementCounter">Counter {{ counter }}</button>
+  <button class="counter" type="button" @click="incrementCounter">
+    Counter {{ counter }}
+  </button>
   <p>{{ $t('doubledCounter', { value: doubledCounter }) }}</p>
 </template>
 

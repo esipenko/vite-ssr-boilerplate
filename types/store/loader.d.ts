@@ -1,3 +1,3 @@
 export interface LoaderState {
-    isPageLoading: boolean;
+  isPageLoading: boolean;
 }
