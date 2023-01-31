@@ -5,7 +5,12 @@
     </li>
   </ul>
 </template>
+<script lang="ts">
+export interface CountryListProps {
+  countries: { code: string; name: string }[];
+}
+</script>
 
 <script lang="ts" setup>
-defineProps<{ countries: { code: string; name: string }[] }>();
+defineProps<CountryListProps>();
 </script>
