@@ -12,5 +12,5 @@ export interface CountryListProps {
 </script>
 
 <script lang="ts" setup>
-defineProps<CountryListProps>();
+defineProps<{ countries: { code: string; name: string }[] }>();
 </script>

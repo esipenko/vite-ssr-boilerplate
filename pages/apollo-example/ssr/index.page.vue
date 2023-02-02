@@ -5,5 +5,5 @@
 <script lang="ts" setup>
 import CountryList from '@/components/CountryList.vue';
 
-defineProps(['countries']);
+defineProps<{ countries: { code: string; name: string }[] }>();
 </script>

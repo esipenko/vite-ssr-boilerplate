@@ -26,6 +26,7 @@
 defineProps({
   show: Boolean,
 });
+defineEmits(['close']);
 </script>
 
 <style>

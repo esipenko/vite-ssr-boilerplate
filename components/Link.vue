@@ -3,14 +3,6 @@
     <slot />
   </a>
 </template>
-<style scoped>
-a {
-  padding: 3px 10px;
-}
-a.active {
-  background-color: #eee;
-}
-</style>
 <script lang="ts" setup>
 import { useAttrs, computed } from 'vue';
 import { usePageContext } from '@/composables/usePageContext';
@@ -25,3 +17,12 @@ const isActive = computed(() => {
     : urlPathname.startsWith(href as string);
 });
 </script>
+
+<style scoped>
+a {
+  padding: 3px 10px;
+}
+a.active {
+  background-color: #eee;
+}
+</style>
